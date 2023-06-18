@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct OrangeApp: App {
+    @StateObject var newsProvider = NewsProvider()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(newsProvider)
         }
     }
 }

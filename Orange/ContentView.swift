@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var newsProvider: NewsProvider
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            StoriesView(stories: newsProvider.topStories)
+                .navigationTitle("Top Stories")
         }
-        .padding()
+        .task {
+            try? await newsProvider.fetchTopStories()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(NewsProvider())
     }
 }
