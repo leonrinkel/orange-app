@@ -10,24 +10,41 @@ import SwiftUI
 struct StoriesView: View {
     var stories: [Item]
 
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
     var body: some View {
         List(stories) { story in
-            VStack(alignment: .leading) {
-                if let title = story.title {
-                    Text(title)
-                        .font(.headline)
-                }
-                if let parsedUrl = story.parsedURL {
-                    HStack(alignment: .firstTextBaseline, spacing: 0) {
-                        if let host = parsedUrl.host() {
-                            Text(host)
-                                .font(.caption)
-                        }
-                        Text(parsedUrl.path())
+            Link(destination: story.parsedURL!) {
+                VStack(alignment: .leading, spacing: 4) {
+                    if let time = story.time {
+                        Text(dateFormatter.string(from: time))
                             .font(.caption)
                             .foregroundColor(.secondary)
-                            .lineLimit(1)
-                            .truncationMode(.tail)
+                    }
+                    if let title = story.title {
+                        Text(title)
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                    }
+                    if let parsedUrl = story.parsedURL {
+                        HStack(alignment: .firstTextBaseline, spacing: 0) {
+                            if let host = parsedUrl.host() {
+                                Text(host)
+                                    .font(.caption)
+                                    .foregroundColor(.accentColor)
+                                    .lineLimit(1)
+                            }
+                            Text(parsedUrl.path())
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                        }
                     }
                 }
             }
