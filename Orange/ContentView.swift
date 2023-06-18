@@ -12,11 +12,52 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            StoriesView(stories: newsProvider.topStories)
-                .navigationTitle("Top Stories")
-        }
-        .task {
-            try? await newsProvider.fetchTopStories()
+            List {
+                Section {
+                    NavigationLink {
+                        StoriesView(stories: newsProvider.topStories)
+                            .navigationTitle("Top Stories 🔝")
+                            .task {
+                                try? await newsProvider.fetchTopStories()
+                            }
+                    } label: {
+                        HStack {
+                            Text("🔝")
+                                .frame(width: 24)
+                            Text("Top Stories")
+                        }
+                    }
+                    NavigationLink {
+                        StoriesView(stories: newsProvider.newStories)
+                            .navigationTitle("New Stories 🆕")
+                            .task {
+                                try? await newsProvider.fetchNewStories()
+                            }
+                    } label: {
+                        HStack {
+                            Text("🆕")
+                                .frame(width: 24)
+                            Text("New Stories")
+                        }
+                    }
+                    NavigationLink {
+                        StoriesView(stories: newsProvider.bestStories)
+                            .navigationTitle("Best Stories 🔥")
+                            .task {
+                                try? await newsProvider.fetchBestStories()
+                            }
+                    } label: {
+                        HStack {
+                            Text("🔥")
+                                .frame(width: 24)
+                            Text("Best Stories")
+                        }
+                    }
+                } header: {
+                    Text("Stories")
+                }
+            }
+            .navigationTitle("Orange")
         }
     }
 }
@@ -24,6 +65,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(NewsProvider())
+            .environmentObject(NewsProvider(implementation: MockNewsProviderImplementation()))
     }
 }
