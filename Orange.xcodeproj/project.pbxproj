@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4275729D2A3F175700CB0211 /* OrangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275729C2A3F175700CB0211 /* OrangeApp.swift */; };
+		4275729F2A3F175700CB0211 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275729E2A3F175700CB0211 /* ContentView.swift */; };
+		427572A12A3F175700CB0211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 427572A02A3F175700CB0211 /* Assets.xcassets */; };
+		427572A42A3F175700CB0211 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 427572A32A3F175700CB0211 /* Preview Assets.xcassets */; };
+		427572AE2A3F175700CB0211 /* OrangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572AD2A3F175700CB0211 /* OrangeTests.swift */; };
+		427572B82A3F175800CB0211 /* OrangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572B72A3F175800CB0211 /* OrangeUITests.swift */; };
+		427572BA2A3F175800CB0211 /* OrangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572B92A3F175800CB0211 /* OrangeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		427572AA2A3F175700CB0211 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 427572912A3F175700CB0211 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 427572982A3F175700CB0211;
+			remoteInfo = Orange;
+		};
+		427572B42A3F175800CB0211 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 427572912A3F175700CB0211 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 427572982A3F175700CB0211;
+			remoteInfo = Orange;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		427572992A3F175700CB0211 /* Orange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orange.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4275729C2A3F175700CB0211 /* OrangeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeApp.swift; sourceTree = "<group>"; };
+		4275729E2A3F175700CB0211 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		427572A02A3F175700CB0211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		427572A32A3F175700CB0211 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		427572A92A3F175700CB0211 /* OrangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		427572AD2A3F175700CB0211 /* OrangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeTests.swift; sourceTree = "<group>"; };
+		427572B32A3F175800CB0211 /* OrangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		427572B72A3F175800CB0211 /* OrangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITests.swift; sourceTree = "<group>"; };
+		427572B92A3F175800CB0211 /* OrangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		427572962A3F175700CB0211 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		427572A62A3F175700CB0211 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		427572B02A3F175800CB0211 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		427572902A3F175700CB0211 = {
+			isa = PBXGroup;
+			children = (
+				4275729B2A3F175700CB0211 /* Orange */,
+				427572AC2A3F175700CB0211 /* OrangeTests */,
+				427572B62A3F175800CB0211 /* OrangeUITests */,
+				4275729A2A3F175700CB0211 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4275729A2A3F175700CB0211 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				427572992A3F175700CB0211 /* Orange.app */,
+				427572A92A3F175700CB0211 /* OrangeTests.xctest */,
+				427572B32A3F175800CB0211 /* OrangeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4275729B2A3F175700CB0211 /* Orange */ = {
+			isa = PBXGroup;
+			children = (
+				4275729C2A3F175700CB0211 /* OrangeApp.swift */,
+				4275729E2A3F175700CB0211 /* ContentView.swift */,
+				427572A02A3F175700CB0211 /* Assets.xcassets */,
+				427572A22A3F175700CB0211 /* Preview Content */,
+			);
+			path = Orange;
+			sourceTree = "<group>";
+		};
+		427572A22A3F175700CB0211 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				427572A32A3F175700CB0211 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		427572AC2A3F175700CB0211 /* OrangeTests */ = {
+			isa = PBXGroup;
+			children = (
+				427572AD2A3F175700CB0211 /* OrangeTests.swift */,
+			);
+			path = OrangeTests;
+			sourceTree = "<group>";
+		};
+		427572B62A3F175800CB0211 /* OrangeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				427572B72A3F175800CB0211 /* OrangeUITests.swift */,
+				427572B92A3F175800CB0211 /* OrangeUITestsLaunchTests.swift */,
+			);
+			path = OrangeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		427572982A3F175700CB0211 /* Orange */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 427572BD2A3F175800CB0211 /* Build configuration list for PBXNativeTarget "Orange" */;
+			buildPhases = (
+				427572952A3F175700CB0211 /* Sources */,
+				427572962A3F175700CB0211 /* Frameworks */,
+				427572972A3F175700CB0211 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Orange;
+			productName = Orange;
+			productReference = 427572992A3F175700CB0211 /* Orange.app */;
+			productType = "com.apple.product-type.application";
+		};
+		427572A82A3F175700CB0211 /* OrangeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 427572C02A3F175800CB0211 /* Build configuration list for PBXNativeTarget "OrangeTests" */;
+			buildPhases = (
+				427572A52A3F175700CB0211 /* Sources */,
+				427572A62A3F175700CB0211 /* Frameworks */,
+				427572A72A3F175700CB0211 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				427572AB2A3F175700CB0211 /* PBXTargetDependency */,
+			);
+			name = OrangeTests;
+			productName = OrangeTests;
+			productReference = 427572A92A3F175700CB0211 /* OrangeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		427572B22A3F175800CB0211 /* OrangeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 427572C32A3F175800CB0211 /* Build configuration list for PBXNativeTarget "OrangeUITests" */;
+			buildPhases = (
+				427572AF2A3F175800CB0211 /* Sources */,
+				427572B02A3F175800CB0211 /* Frameworks */,
+				427572B12A3F175800CB0211 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				427572B52A3F175800CB0211 /* PBXTargetDependency */,
+			);
+			name = OrangeUITests;
+			productName = OrangeUITests;
+			productReference = 427572B32A3F175800CB0211 /* OrangeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		427572912A3F175700CB0211 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					427572982A3F175700CB0211 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					427572A82A3F175700CB0211 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 427572982A3F175700CB0211;
+					};
+					427572B22A3F175800CB0211 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 427572982A3F175700CB0211;
+					};
+				};
+			};
+			buildConfigurationList = 427572942A3F175700CB0211 /* Build configuration list for PBXProject "Orange" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 427572902A3F175700CB0211;
+			productRefGroup = 4275729A2A3F175700CB0211 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				427572982A3F175700CB0211 /* Orange */,
+				427572A82A3F175700CB0211 /* OrangeTests */,
+				427572B22A3F175800CB0211 /* OrangeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		427572972A3F175700CB0211 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				427572A42A3F175700CB0211 /* Preview Assets.xcassets in Resources */,
+				427572A12A3F175700CB0211 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		427572A72A3F175700CB0211 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		427572B12A3F175800CB0211 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		427572952A3F175700CB0211 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4275729F2A3F175700CB0211 /* ContentView.swift in Sources */,
+				4275729D2A3F175700CB0211 /* OrangeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		427572A52A3F175700CB0211 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				427572AE2A3F175700CB0211 /* OrangeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		427572AF2A3F175800CB0211 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				427572BA2A3F175800CB0211 /* OrangeUITestsLaunchTests.swift in Sources */,
+				427572B82A3F175800CB0211 /* OrangeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		427572AB2A3F175700CB0211 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 427572982A3F175700CB0211 /* Orange */;
+			targetProxy = 427572AA2A3F175700CB0211 /* PBXContainerItemProxy */;
+		};
+		427572B52A3F175800CB0211 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 427572982A3F175700CB0211 /* Orange */;
+			targetProxy = 427572B42A3F175800CB0211 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		427572BB2A3F175800CB0211 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		427572BC2A3F175800CB0211 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		427572BE2A3F175800CB0211 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Orange/Preview Content\"";
+				DEVELOPMENT_TEAM = 844ZV549HP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fyi.leon.Orange;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		427572BF2A3F175800CB0211 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Orange/Preview Content\"";
+				DEVELOPMENT_TEAM = 844ZV549HP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fyi.leon.Orange;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		427572C12A3F175800CB0211 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 844ZV549HP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fyi.leon.OrangeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orange.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Orange";
+			};
+			name = Debug;
+		};
+		427572C22A3F175800CB0211 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 844ZV549HP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fyi.leon.OrangeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orange.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Orange";
+			};
+			name = Release;
+		};
+		427572C42A3F175800CB0211 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 844ZV549HP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fyi.leon.OrangeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Orange;
+			};
+			name = Debug;
+		};
+		427572C52A3F175800CB0211 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 844ZV549HP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fyi.leon.OrangeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Orange;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		427572942A3F175700CB0211 /* Build configuration list for PBXProject "Orange" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				427572BB2A3F175800CB0211 /* Debug */,
+				427572BC2A3F175800CB0211 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		427572BD2A3F175800CB0211 /* Build configuration list for PBXNativeTarget "Orange" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				427572BE2A3F175800CB0211 /* Debug */,
+				427572BF2A3F175800CB0211 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		427572C02A3F175800CB0211 /* Build configuration list for PBXNativeTarget "OrangeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				427572C12A3F175800CB0211 /* Debug */,
+				427572C22A3F175800CB0211 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		427572C32A3F175800CB0211 /* Build configuration list for PBXNativeTarget "OrangeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				427572C42A3F175800CB0211 /* Debug */,
+				427572C52A3F175800CB0211 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 427572912A3F175700CB0211 /* Project object */;
+}
