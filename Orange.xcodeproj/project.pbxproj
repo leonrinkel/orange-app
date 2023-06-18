@@ -14,6 +14,10 @@
 		427572AE2A3F175700CB0211 /* OrangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572AD2A3F175700CB0211 /* OrangeTests.swift */; };
 		427572B82A3F175800CB0211 /* OrangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572B72A3F175800CB0211 /* OrangeUITests.swift */; };
 		427572BA2A3F175800CB0211 /* OrangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572B92A3F175800CB0211 /* OrangeUITestsLaunchTests.swift */; };
+		427572C82A3F178100CB0211 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572C72A3F178100CB0211 /* Item.swift */; };
+		427572CA2A3F179000CB0211 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572C92A3F179000CB0211 /* User.swift */; };
+		427572CC2A3F17B900CB0211 /* ItemDecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572CB2A3F17B900CB0211 /* ItemDecodeTests.swift */; };
+		427572CE2A3F56F000CB0211 /* UserDecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572CD2A3F56F000CB0211 /* UserDecodeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		427572B32A3F175800CB0211 /* OrangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		427572B72A3F175800CB0211 /* OrangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITests.swift; sourceTree = "<group>"; };
 		427572B92A3F175800CB0211 /* OrangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		427572C72A3F178100CB0211 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		427572C92A3F179000CB0211 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		427572CB2A3F17B900CB0211 /* ItemDecodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDecodeTests.swift; sourceTree = "<group>"; };
+		427572CD2A3F56F000CB0211 /* UserDecodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDecodeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,7 @@
 		4275729B2A3F175700CB0211 /* Orange */ = {
 			isa = PBXGroup;
 			children = (
+				427572C62A3F177000CB0211 /* Model */,
 				4275729C2A3F175700CB0211 /* OrangeApp.swift */,
 				4275729E2A3F175700CB0211 /* ContentView.swift */,
 				427572A02A3F175700CB0211 /* Assets.xcassets */,
@@ -114,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				427572AD2A3F175700CB0211 /* OrangeTests.swift */,
+				427572CB2A3F17B900CB0211 /* ItemDecodeTests.swift */,
+				427572CD2A3F56F000CB0211 /* UserDecodeTests.swift */,
 			);
 			path = OrangeTests;
 			sourceTree = "<group>";
@@ -125,6 +136,15 @@
 				427572B92A3F175800CB0211 /* OrangeUITestsLaunchTests.swift */,
 			);
 			path = OrangeUITests;
+			sourceTree = "<group>";
+		};
+		427572C62A3F177000CB0211 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				427572C72A3F178100CB0211 /* Item.swift */,
+				427572C92A3F179000CB0211 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				427572CA2A3F179000CB0211 /* User.swift in Sources */,
 				4275729F2A3F175700CB0211 /* ContentView.swift in Sources */,
+				427572C82A3F178100CB0211 /* Item.swift in Sources */,
 				4275729D2A3F175700CB0211 /* OrangeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				427572CC2A3F17B900CB0211 /* ItemDecodeTests.swift in Sources */,
 				427572AE2A3F175700CB0211 /* OrangeTests.swift in Sources */,
+				427572CE2A3F56F000CB0211 /* UserDecodeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
