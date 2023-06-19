@@ -18,7 +18,9 @@ struct StoryRowView: View {
     }()
     
     var body: some View {
-        VStack(spacing: 0) {
+        HStack {
+            // TODO: put all the ifs here
+            // TODO: display even if there is no link
             if let story = storyProvider.story, let parsedUrl = story.parsedURL {
                 Link(destination: parsedUrl) {
                     VStack(alignment: .leading, spacing: 4) {
@@ -50,8 +52,25 @@ struct StoryRowView: View {
                     }
                 }
             } else {
-                Text("Loading...")
-                    .foregroundColor(.secondary)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("...")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Text("...")
+                        .font(.headline)
+                        .foregroundColor(.secondary)
+                    HStack(alignment: .firstTextBaseline, spacing: 0) {
+                        Text("...")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .lineLimit(1)
+                        Text("...")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                    }
+                }
             }
         }
         .onAppear {

@@ -12,8 +12,16 @@ struct StoriesView: View {
     @StateObject var storiesProvider: StoriesProvider
 
     var body: some View {
-        List(storiesProvider.stories, id: \.self) { storyId in
-            StoryRowView(storyProvider: networkFactory.newStoryProvider(for: storyId))
+        VStack() {
+            if storiesProvider.stories.isEmpty {
+                ProgressView()
+                    .progressViewStyle(.circular)
+                Spacer()
+            } else {
+                List(storiesProvider.stories, id: \.self) { storyId in
+                    StoryRowView(storyProvider: networkFactory.newStoryProvider(for: storyId))
+                }
+            }
         }
         .task {
             try? await storiesProvider.fetchStories()
