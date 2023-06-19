@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424D051F2A40E0FA000F581B /* StoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D051E2A40E0FA000F581B /* StoryProvider.swift */; };
+		424D05212A40E1DF000F581B /* NetworkFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D05202A40E1DF000F581B /* NetworkFactory.swift */; };
+		424D05232A40E266000F581B /* StoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D05222A40E266000F581B /* StoryRowView.swift */; };
+		424D05252A40E458000F581B /* StoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D05242A40E458000F581B /* StoriesProvider.swift */; };
 		4275729D2A3F175700CB0211 /* OrangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275729C2A3F175700CB0211 /* OrangeApp.swift */; };
 		4275729F2A3F175700CB0211 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275729E2A3F175700CB0211 /* ContentView.swift */; };
 		427572A12A3F175700CB0211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 427572A02A3F175700CB0211 /* Assets.xcassets */; };
@@ -42,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		424D051E2A40E0FA000F581B /* StoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryProvider.swift; sourceTree = "<group>"; };
+		424D05202A40E1DF000F581B /* NetworkFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFactory.swift; sourceTree = "<group>"; };
+		424D05222A40E266000F581B /* StoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryRowView.swift; sourceTree = "<group>"; };
+		424D05242A40E458000F581B /* StoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesProvider.swift; sourceTree = "<group>"; };
 		427572992A3F175700CB0211 /* Orange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4275729C2A3F175700CB0211 /* OrangeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeApp.swift; sourceTree = "<group>"; };
 		4275729E2A3F175700CB0211 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				427572D62A3F611700CB0211 /* StoriesView.swift */,
+				424D05222A40E266000F581B /* StoryRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +180,9 @@
 			children = (
 				427572D32A3F5D9D00CB0211 /* NewsProvider.swift */,
 				427572CF2A3F580200CB0211 /* NewsClient.swift */,
+				424D051E2A40E0FA000F581B /* StoryProvider.swift */,
+				424D05202A40E1DF000F581B /* NetworkFactory.swift */,
+				424D05242A40E458000F581B /* StoriesProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -307,10 +319,14 @@
 			files = (
 				427572CA2A3F179000CB0211 /* User.swift in Sources */,
 				427572D42A3F5D9D00CB0211 /* NewsProvider.swift in Sources */,
+				424D051F2A40E0FA000F581B /* StoryProvider.swift in Sources */,
+				424D05212A40E1DF000F581B /* NetworkFactory.swift in Sources */,
+				424D05252A40E458000F581B /* StoriesProvider.swift in Sources */,
 				4275729F2A3F175700CB0211 /* ContentView.swift in Sources */,
 				427572D72A3F611700CB0211 /* StoriesView.swift in Sources */,
 				427572D02A3F580200CB0211 /* NewsClient.swift in Sources */,
 				427572C82A3F178100CB0211 /* Item.swift in Sources */,
+				424D05232A40E266000F581B /* StoryRowView.swift in Sources */,
 				4275729D2A3F175700CB0211 /* OrangeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct OrangeApp: App {
-    @StateObject var newsProvider = NewsProvider()
+    @StateObject var networkFactory = NetworkFactory(implementation: DefaultNetworkFactoryImplementation())
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(newsProvider)
+                .environmentObject(networkFactory)
         }
     }
 }

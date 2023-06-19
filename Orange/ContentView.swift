@@ -8,18 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var newsProvider: NewsProvider
+    @EnvironmentObject var networkFactory: NetworkFactory
 
     var body: some View {
         NavigationView {
             List {
                 Section {
                     NavigationLink {
-                        StoriesView(stories: newsProvider.topStories)
+                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .topStories))
                             .navigationTitle("Top Stories 🔝")
-                            .task {
-                                try? await newsProvider.fetchTopStories()
-                            }
                     } label: {
                         HStack {
                             Text("🔝")
@@ -28,11 +25,8 @@ struct ContentView: View {
                         }
                     }
                     NavigationLink {
-                        StoriesView(stories: newsProvider.newStories)
+                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .newStories))
                             .navigationTitle("New Stories 🆕")
-                            .task {
-                                try? await newsProvider.fetchNewStories()
-                            }
                     } label: {
                         HStack {
                             Text("🆕")
@@ -41,11 +35,8 @@ struct ContentView: View {
                         }
                     }
                     NavigationLink {
-                        StoriesView(stories: newsProvider.bestStories)
+                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .bestStories))
                             .navigationTitle("Best Stories 🔥")
-                            .task {
-                                try? await newsProvider.fetchBestStories()
-                            }
                     } label: {
                         HStack {
                             Text("🔥")
@@ -65,6 +56,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(NewsProvider(implementation: MockNewsProviderImplementation()))
+            .environmentObject(NetworkFactory(implementation: MockNetworkFactoryImplementation()))
     }
 }
