@@ -28,7 +28,7 @@ struct StoryRowView: View {
                 NavigationLink {
                     SafariView(url: parsedUrl)
                         .ignoresSafeArea()
-                        .navigationBarBackButtonHidden()
+                        .navigationBarTitleDisplayMode(.inline)
                 } label: {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(dateFormatter.string(from: time))
