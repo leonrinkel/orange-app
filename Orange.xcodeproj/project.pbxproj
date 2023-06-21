@@ -26,6 +26,7 @@
 		427572D22A3F590100CB0211 /* NewsClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572D12A3F590100CB0211 /* NewsClientTests.swift */; };
 		427572D42A3F5D9D00CB0211 /* NewsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572D32A3F5D9D00CB0211 /* NewsProvider.swift */; };
 		427572D72A3F611700CB0211 /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572D62A3F611700CB0211 /* StoriesView.swift */; };
+		42C927E02A438EB5000D0422 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C927DF2A438EB5000D0422 /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		427572D12A3F590100CB0211 /* NewsClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsClientTests.swift; sourceTree = "<group>"; };
 		427572D32A3F5D9D00CB0211 /* NewsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsProvider.swift; sourceTree = "<group>"; };
 		427572D62A3F611700CB0211 /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
+		42C927DF2A438EB5000D0422 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			children = (
 				427572D62A3F611700CB0211 /* StoriesView.swift */,
 				424D05222A40E266000F581B /* StoryRowView.swift */,
+				42C927DF2A438EB5000D0422 /* SafariView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				427572D42A3F5D9D00CB0211 /* NewsProvider.swift in Sources */,
 				424D051F2A40E0FA000F581B /* StoryProvider.swift in Sources */,
 				424D05212A40E1DF000F581B /* NetworkFactory.swift in Sources */,
+				42C927E02A438EB5000D0422 /* SafariView.swift in Sources */,
 				424D05252A40E458000F581B /* StoriesProvider.swift in Sources */,
 				4275729F2A3F175700CB0211 /* ContentView.swift in Sources */,
 				427572D72A3F611700CB0211 /* StoriesView.swift in Sources */,
