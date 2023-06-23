@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct StoryRowView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @StateObject var storyProvider: StoryProvider
+    @State var savedStory: SavedStory?
 
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -74,10 +76,10 @@ struct StoryRowView: View {
             }
         }
         .swipeActions {
-            // TODO: dont save duplicates
-            Button {
-                if let story = storyProvider.story {
-                    _ = SavedStory(context: viewContext, from: story)
+            if let savedStory {
+                Button {
+                    viewContext.delete(savedStory)
+                    self.savedStory = nil
                     do {
                         try viewContext.save()
                     } catch {
@@ -86,15 +88,42 @@ struct StoryRowView: View {
                         let nsError = error as NSError
                         fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                     }
+                } label: {
+                    Label("Unsave", systemImage: "bookmark.slash.fill")
                 }
-            } label: {
-                Label("Save", systemImage: "bookmark.fill")
+                .tint(.red)
+            } else {
+                Button {
+                    if let story = storyProvider.story {
+                        savedStory = SavedStory(context: viewContext, from: story)
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            // TODO: Replace this implementation with code to handle the error appropriately.
+                            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                            let nsError = error as NSError
+                            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                        }
+                    }
+                } label: {
+                    Label("Save", systemImage: "bookmark.fill")
+                }
+                .tint(.accentColor)
             }
-            .tint(.accentColor)
         }
         .onAppear {
             Task {
                 try? await storyProvider.fetchStory()
+            }
+        }
+        .onChange(of: storyProvider.story) { story in
+            if let story = story {
+                let request = SavedStory.fetchRequest()
+                request.predicate = NSPredicate(format: "id = \(story.id)")
+                request.fetchLimit = 1
+                if let savedStories = try? viewContext.fetch(request) {
+                    savedStory = savedStories.first
+                }
             }
         }
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item: Identifiable, Decodable {
+struct Item: Identifiable, Decodable, Equatable {
     var id: Int
     var deleted: Bool?
     var type: ItemType?
