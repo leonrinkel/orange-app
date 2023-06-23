@@ -21,6 +21,9 @@ struct StoriesView: View {
                 List(storiesProvider.stories, id: \.self) { storyId in
                     StoryRowView(storyProvider: networkFactory.newStoryProvider(for: storyId))
                 }
+                .refreshable {
+                    try? await storiesProvider.fetchStories()
+                }
             }
         }
         .task {
