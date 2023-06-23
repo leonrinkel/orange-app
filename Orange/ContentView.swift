@@ -47,6 +47,20 @@ struct ContentView: View {
                 } header: {
                     Text("Stories")
                 }
+                Section {
+                    NavigationLink {
+                        SavedStoriesView()
+                            .navigationTitle("Saved Stories 💾")
+                    } label: {
+                        HStack {
+                            Text("💾")
+                                .frame(width: 24)
+                            Text("Saved Stories")
+                        }
+                    }
+                } header: {
+                    Text("Library")
+                }
             }
             .navigationTitle("Orange")
         }

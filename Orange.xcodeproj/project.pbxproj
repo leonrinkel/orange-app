@@ -11,6 +11,11 @@
 		424D05212A40E1DF000F581B /* NetworkFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D05202A40E1DF000F581B /* NetworkFactory.swift */; };
 		424D05232A40E266000F581B /* StoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D05222A40E266000F581B /* StoryRowView.swift */; };
 		424D05252A40E458000F581B /* StoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D05242A40E458000F581B /* StoriesProvider.swift */; };
+		4269F40F2A45C25400EB79D3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4269F40D2A45C25400EB79D3 /* Model.xcdatamodeld */; };
+		4269F4302A45C33E00EB79D3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269F42F2A45C33E00EB79D3 /* Persistence.swift */; };
+		4269F4322A45C3B800EB79D3 /* SavedStoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269F4312A45C3B800EB79D3 /* SavedStoriesView.swift */; };
+		4269F4342A45C3DD00EB79D3 /* SavedStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269F4332A45C3DD00EB79D3 /* SavedStory.swift */; };
+		4269F4362A45C60D00EB79D3 /* SavedStoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4269F4352A45C60D00EB79D3 /* SavedStoryRowView.swift */; };
 		4275729D2A3F175700CB0211 /* OrangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275729C2A3F175700CB0211 /* OrangeApp.swift */; };
 		4275729F2A3F175700CB0211 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275729E2A3F175700CB0211 /* ContentView.swift */; };
 		427572A12A3F175700CB0211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 427572A02A3F175700CB0211 /* Assets.xcassets */; };
@@ -51,6 +56,11 @@
 		424D05202A40E1DF000F581B /* NetworkFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFactory.swift; sourceTree = "<group>"; };
 		424D05222A40E266000F581B /* StoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryRowView.swift; sourceTree = "<group>"; };
 		424D05242A40E458000F581B /* StoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesProvider.swift; sourceTree = "<group>"; };
+		4269F40E2A45C25400EB79D3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		4269F42F2A45C33E00EB79D3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		4269F4312A45C3B800EB79D3 /* SavedStoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStoriesView.swift; sourceTree = "<group>"; };
+		4269F4332A45C3DD00EB79D3 /* SavedStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStory.swift; sourceTree = "<group>"; };
+		4269F4352A45C60D00EB79D3 /* SavedStoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStoryRowView.swift; sourceTree = "<group>"; };
 		427572992A3F175700CB0211 /* Orange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4275729C2A3F175700CB0211 /* OrangeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeApp.swift; sourceTree = "<group>"; };
 		4275729E2A3F175700CB0211 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,6 +137,8 @@
 				4275729E2A3F175700CB0211 /* ContentView.swift */,
 				427572A02A3F175700CB0211 /* Assets.xcassets */,
 				427572A22A3F175700CB0211 /* Preview Content */,
+				4269F40D2A45C25400EB79D3 /* Model.xcdatamodeld */,
+				4269F42F2A45C33E00EB79D3 /* Persistence.swift */,
 			);
 			path = Orange;
 			sourceTree = "<group>";
@@ -164,6 +176,7 @@
 			children = (
 				427572C72A3F178100CB0211 /* Item.swift */,
 				427572C92A3F179000CB0211 /* User.swift */,
+				4269F4332A45C3DD00EB79D3 /* SavedStory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +187,8 @@
 				427572D62A3F611700CB0211 /* StoriesView.swift */,
 				424D05222A40E266000F581B /* StoryRowView.swift */,
 				42C927DF2A438EB5000D0422 /* SafariView.swift */,
+				4269F4312A45C3B800EB79D3 /* SavedStoriesView.swift */,
+				4269F4352A45C60D00EB79D3 /* SavedStoryRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -321,8 +336,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				427572CA2A3F179000CB0211 /* User.swift in Sources */,
+				4269F4362A45C60D00EB79D3 /* SavedStoryRowView.swift in Sources */,
 				427572D42A3F5D9D00CB0211 /* NewsProvider.swift in Sources */,
 				424D051F2A40E0FA000F581B /* StoryProvider.swift in Sources */,
+				4269F4322A45C3B800EB79D3 /* SavedStoriesView.swift in Sources */,
+				4269F4302A45C33E00EB79D3 /* Persistence.swift in Sources */,
 				424D05212A40E1DF000F581B /* NetworkFactory.swift in Sources */,
 				42C927E02A438EB5000D0422 /* SafariView.swift in Sources */,
 				424D05252A40E458000F581B /* StoriesProvider.swift in Sources */,
@@ -331,7 +349,9 @@
 				427572D02A3F580200CB0211 /* NewsClient.swift in Sources */,
 				427572C82A3F178100CB0211 /* Item.swift in Sources */,
 				424D05232A40E266000F581B /* StoryRowView.swift in Sources */,
+				4269F40F2A45C25400EB79D3 /* Model.xcdatamodeld in Sources */,
 				4275729D2A3F175700CB0211 /* OrangeApp.swift in Sources */,
+				4269F4342A45C3DD00EB79D3 /* SavedStory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,6 +679,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4269F40D2A45C25400EB79D3 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4269F40E2A45C25400EB79D3 /* Model.xcdatamodel */,
+			);
+			currentVersion = 4269F40E2A45C25400EB79D3 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 427572912A3F175700CB0211 /* Project object */;
 }

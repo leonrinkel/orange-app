@@ -1,15 +1,14 @@
 //
-//  StoryRowView.swift
+//  SavedStoryRowView.swift
 //  Orange
 //
-//  Created by Leon Rinkel on 19.06.23.
+//  Created by Leon Rinkel on 23.06.23.
 //
 
 import SwiftUI
 
-struct StoryRowView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @StateObject var storyProvider: StoryProvider
+struct SavedStoryRowView: View {
+    var savedStory: SavedStory
 
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -21,10 +20,9 @@ struct StoryRowView: View {
     var body: some View {
         HStack {
             // TODO: display even if there is no link (asks)
-            if let story = storyProvider.story,
-               let parsedUrl = story.parsedURL,
-               let time = story.time,
-               let title = story.title,
+            if let parsedUrl = savedStory.parsedURL,
+               let time = savedStory.time,
+               let title = savedStory.title,
                let host = parsedUrl.host() {
                 NavigationLink {
                     SafariView(url: parsedUrl)
@@ -73,35 +71,11 @@ struct StoryRowView: View {
                 }
             }
         }
-        .swipeActions {
-            // TODO: dont save duplicates
-            Button {
-                if let story = storyProvider.story {
-                    _ = SavedStory(context: viewContext, from: story)
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        // TODO: Replace this implementation with code to handle the error appropriately.
-                        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                        let nsError = error as NSError
-                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                    }
-                }
-            } label: {
-                Label("Save", systemImage: "bookmark.fill")
-            }
-            .tint(.accentColor)
-        }
-        .onAppear {
-            Task {
-                try? await storyProvider.fetchStory()
-            }
-        }
     }
 }
 
-struct StoryRow_Previews: PreviewProvider {
-    static var previews: some View {
-        StoryRowView(storyProvider: StoryProvider(implementation: MockStoryProviderImplementation(id: Item.sampleStories[0].id)))
-    }
-}
+//struct SavedStoryRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SavedStoryRowView()
+//    }
+//}
