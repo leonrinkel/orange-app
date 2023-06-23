@@ -74,8 +74,8 @@ struct SavedStoryRowView: View {
     }
 }
 
-//struct SavedStoryRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SavedStoryRowView()
-//    }
-//}
+struct SavedStoryRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        SavedStoryRowView(savedStory: SavedStory(context: PersistenceController.preview.container.viewContext, from: Item.sampleStories[0]))
+    }
+}

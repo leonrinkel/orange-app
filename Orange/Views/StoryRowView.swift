@@ -132,5 +132,6 @@ struct StoryRowView: View {
 struct StoryRow_Previews: PreviewProvider {
     static var previews: some View {
         StoryRowView(storyProvider: StoryProvider(implementation: MockStoryProviderImplementation(id: Item.sampleStories[0].id)))
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
