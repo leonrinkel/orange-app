@@ -20,14 +20,6 @@ struct StoriesView: View {
             } else {
                 List(storiesProvider.stories, id: \.self) { storyId in
                     StoryRowView(storyProvider: networkFactory.newStoryProvider(for: storyId))
-                        /*.swipeActions {
-                            Button {
-                                
-                            } label: {
-                                Label("Save", systemImage: "square.and.arrow.down.fill")
-                            }
-                            .tint(.accentColor)
-                        }*/
                 }
                 .refreshable {
                     try? await storiesProvider.fetchStories()
@@ -35,7 +27,9 @@ struct StoriesView: View {
             }
         }
         .task {
-            try? await storiesProvider.fetchStories()
+            if storiesProvider.stories.isEmpty {
+                try? await storiesProvider.fetchStories()
+            }
         }
     }
 }
