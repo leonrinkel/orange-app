@@ -9,6 +9,7 @@ import SwiftUI
 import SafariServices
 
 struct SafariView: UIViewControllerRepresentable {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let url: URL
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
@@ -25,6 +26,10 @@ struct SafariView: UIViewControllerRepresentable {
 
         init(_ parent: SafariView) {
             self.parent = parent
+        }
+        
+        func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+            parent.presentationMode.wrappedValue.dismiss()
         }
     }
     
