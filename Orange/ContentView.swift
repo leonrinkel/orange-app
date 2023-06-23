@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
     @EnvironmentObject var networkFactory: NetworkFactory
+    @Environment(\.managedObjectContext) private var viewContext
 
+    @State var savedStoriesCount: Int?
+    
     var body: some View {
         NavigationView {
             List {
@@ -56,6 +60,7 @@ struct ContentView: View {
                             Text("💾")
                                 .frame(width: 24)
                             Text("Saved Stories")
+                                .badge(savedStoriesCount ?? 0)
                         }
                     }
                 } header: {
@@ -63,6 +68,12 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Orange")
+            .onAppear {
+                Task {
+                    let request = SavedStory.fetchRequest()
+                    savedStoriesCount = try? viewContext.count(for: request)
+                }
+            }
         }
     }
 }
@@ -71,5 +82,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(NetworkFactory(implementation: MockNetworkFactoryImplementation()))
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
