@@ -15,6 +15,8 @@ struct SavedStoriesView: View {
         animation: .default)
     private var savedStories: FetchedResults<SavedStory>
     
+    @State var searchQuery: String = ""
+    
     var body: some View {
         List {
             ForEach(savedStories) { savedStory in
@@ -32,6 +34,10 @@ struct SavedStoriesView: View {
                     fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
             }
+        }
+        .searchable(text: $searchQuery)
+        .onChange(of: searchQuery) { newQuery in
+            savedStories.nsPredicate = newQuery.isEmpty ? nil : NSPredicate(format: "title CONTAINS[c] %@", newQuery)
         }
     }
 }
