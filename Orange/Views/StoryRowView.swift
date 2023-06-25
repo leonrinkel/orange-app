@@ -20,38 +20,55 @@ struct StoryRowView: View {
         return formatter
     }()
     
+    func WithLink(url: URL, time: Date, title: String, urlHost: String) -> some View {
+        NavigationLink {
+            SafariView(url: url)
+                .ignoresSafeArea()
+                .navigationBarTitleDisplayMode(.inline)
+        } label: {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(dateFormatter.string(from: time))
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                Text(title)
+                    .font(.headline)
+                    .foregroundColor(.primary)
+                HStack(alignment: .firstTextBaseline, spacing: 0) {
+                    Text(urlHost)
+                        .font(.caption)
+                        .foregroundColor(.accentColor)
+                        .lineLimit(1)
+                    Text(url.path())
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                }
+            }
+        }
+    }
+    
+    func WithoutLink(time: Date, title: String) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(dateFormatter.string(from: time))
+                .font(.caption)
+                .foregroundColor(.secondary)
+            Text(title)
+                .font(.headline)
+                .foregroundColor(.primary)
+        }
+    }
+    
     var body: some View {
         HStack {
-            // TODO: display even if there is no link (asks)
             if let story = storyProvider.story,
-               let parsedUrl = story.parsedURL,
                let time = story.time,
-               let title = story.title,
-               let host = parsedUrl.host() {
-                NavigationLink {
-                    SafariView(url: parsedUrl)
-                        .ignoresSafeArea()
-                        .navigationBarTitleDisplayMode(.inline)
-                } label: {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(dateFormatter.string(from: time))
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                        Text(title)
-                            .font(.headline)
-                            .foregroundColor(.primary)
-                        HStack(alignment: .firstTextBaseline, spacing: 0) {
-                            Text(host)
-                                .font(.caption)
-                                .foregroundColor(.accentColor)
-                                .lineLimit(1)
-                            Text(parsedUrl.path())
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                                .lineLimit(1)
-                                .truncationMode(.tail)
-                        }
-                    }
+               let title = story.title {
+                if let url = story.parsedURL,
+                   let host = url.host() {
+                    WithLink(url: url, time: time, title: title, urlHost: host)
+                } else {
+                    WithoutLink(time: time, title: title)
                 }
             } else {
                 VStack(alignment: .leading, spacing: 4) {
