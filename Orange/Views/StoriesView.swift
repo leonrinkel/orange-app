@@ -39,5 +39,6 @@ struct StoriesView_Previews: PreviewProvider {
         let networkFactory = NetworkFactory(implementation: MockNetworkFactoryImplementation())
         return StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .topStories))
             .environmentObject(networkFactory)
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
