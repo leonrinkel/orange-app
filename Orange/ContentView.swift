@@ -14,12 +14,19 @@ struct ContentView: View {
 
     @State var savedStoriesCount: Int?
     
+    @State private var topStoriesProvider: StoriesProvider?
+    @State private var newStoriesProvider: StoriesProvider?
+    @State private var bestStoriesProvider: StoriesProvider?
+    @State private var askStoriesProvider: StoriesProvider?
+    @State private var showStoriesProvider: StoriesProvider?
+    @State private var jobStoriesProvider: StoriesProvider?
+    
     var body: some View {
         NavigationView {
             List {
                 Section {
                     NavigationLink {
-                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .topStories))
+                        StoriesView(storiesProvider: topStoriesProvider!)
                             .navigationTitle("Top Stories 🔝")
                     } label: {
                         Label {
@@ -29,7 +36,7 @@ struct ContentView: View {
                         }
                     }
                     NavigationLink {
-                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .newStories))
+                        StoriesView(storiesProvider: newStoriesProvider!)
                             .navigationTitle("New Stories 🆕")
                     } label: {
                         Label {
@@ -39,7 +46,7 @@ struct ContentView: View {
                         }
                     }
                     NavigationLink {
-                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .bestStories))
+                        StoriesView(storiesProvider: bestStoriesProvider!)
                             .navigationTitle("Best Stories 🥇")
                     } label: {
                         Label {
@@ -53,7 +60,7 @@ struct ContentView: View {
                 }
                 Section {
                     NavigationLink {
-                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .askStories))
+                        StoriesView(storiesProvider: askStoriesProvider!)
                             .navigationTitle("Ask Stories ❓")
                     } label: {
                         Label {
@@ -63,7 +70,7 @@ struct ContentView: View {
                         }
                     }
                     NavigationLink {
-                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .showStories))
+                        StoriesView(storiesProvider: showStoriesProvider!)
                             .navigationTitle("Show Stories 👀")
                     } label: {
                         Label {
@@ -73,7 +80,7 @@ struct ContentView: View {
                         }
                     }
                     NavigationLink {
-                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .jobStories))
+                        StoriesView(storiesProvider: jobStoriesProvider!)
                             .navigationTitle("Job Stories 🧑‍💼")
                     } label: {
                         Label {
@@ -103,6 +110,28 @@ struct ContentView: View {
             }
             .navigationTitle("Orange 🍊")
             .onAppear {
+                Task {
+                    if topStoriesProvider == nil {
+                        topStoriesProvider = networkFactory.newStoriesProvider(for: .topStories)
+                    }
+                    if newStoriesProvider == nil {
+                        newStoriesProvider = networkFactory.newStoriesProvider(for: .newStories)
+                    }
+                    if bestStoriesProvider == nil {
+                        bestStoriesProvider = networkFactory.newStoriesProvider(for: .bestStories)
+                    }
+                }
+                Task {
+                    if askStoriesProvider == nil {
+                        askStoriesProvider = networkFactory.newStoriesProvider(for: .askStories)
+                    }
+                    if showStoriesProvider == nil {
+                        showStoriesProvider = networkFactory.newStoriesProvider(for: .showStories)
+                    }
+                    if jobStoriesProvider == nil {
+                        jobStoriesProvider = networkFactory.newStoriesProvider(for: .jobStories)
+                    }
+                }
                 Task {
                     let request = SavedStory.fetchRequest()
                     savedStoriesCount = try? viewContext.count(for: request)
