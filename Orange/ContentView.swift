@@ -22,34 +22,68 @@ struct ContentView: View {
                         StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .topStories))
                             .navigationTitle("Top Stories 🔝")
                     } label: {
-                        HStack {
-                            Text("🔝")
-                                .frame(width: 24)
+                        Label {
                             Text("Top Stories")
+                        } icon: {
+                            Text("🔝")
                         }
                     }
                     NavigationLink {
                         StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .newStories))
                             .navigationTitle("New Stories 🆕")
                     } label: {
-                        HStack {
-                            Text("🆕")
-                                .frame(width: 24)
+                        Label {
                             Text("New Stories")
+                        } icon: {
+                            Text("🆕")
                         }
                     }
                     NavigationLink {
                         StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .bestStories))
-                            .navigationTitle("Best Stories 🔥")
+                            .navigationTitle("Best Stories 🥇")
                     } label: {
-                        HStack {
-                            Text("🔥")
-                                .frame(width: 24)
+                        Label {
                             Text("Best Stories")
+                        } icon: {
+                            Text("🥇")
                         }
                     }
                 } header: {
-                    Text("Stories")
+                    Text("Lists")
+                }
+                Section {
+                    NavigationLink {
+                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .askStories))
+                            .navigationTitle("Ask Stories ❓")
+                    } label: {
+                        Label {
+                            Text("Ask Stories")
+                        } icon: {
+                            Text("❓")
+                        }
+                    }
+                    NavigationLink {
+                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .showStories))
+                            .navigationTitle("Show Stories 👀")
+                    } label: {
+                        Label {
+                            Text("Show Stories")
+                        } icon: {
+                            Text("👀")
+                        }
+                    }
+                    NavigationLink {
+                        StoriesView(storiesProvider: networkFactory.newStoriesProvider(for: .jobStories))
+                            .navigationTitle("Job Stories 🧑‍💼")
+                    } label: {
+                        Label {
+                            Text("Job Stories")
+                        } icon: {
+                            Text("🧑‍💼")
+                        }
+                    }
+                } header: {
+                    Text("Types")
                 }
                 Section {
                     NavigationLink {
@@ -67,7 +101,7 @@ struct ContentView: View {
                     Text("Library")
                 }
             }
-            .navigationTitle("Orange")
+            .navigationTitle("Orange 🍊")
             .onAppear {
                 Task {
                     let request = SavedStory.fetchRequest()
