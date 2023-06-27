@@ -11,7 +11,7 @@ import CoreData
 struct SavedStoriesView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SavedStory.time, ascending: true)],
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SavedStory.time, ascending: false)],
         animation: .default)
     private var savedStories: FetchedResults<SavedStory>
     
