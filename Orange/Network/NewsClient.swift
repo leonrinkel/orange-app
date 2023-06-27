@@ -8,6 +8,8 @@
 import Foundation
 
 actor NewsClient {
+    static let shared = NewsClient()
+
     static let validStatus = 200...299
     
     enum Endpoint: String {
@@ -27,6 +29,8 @@ actor NewsClient {
         myDecoder.dateDecodingStrategy = .secondsSince1970
         return myDecoder
     }()
+    
+    private let itemCache: NSCache<NSString, CacheEntryObject> = NSCache()
     
     nonisolated func url(for path: String) -> URL {
         var components = URLComponents()
@@ -51,11 +55,32 @@ actor NewsClient {
     }
     
     func item(with id: Int) async throws -> Item {
-        let data = try await request(from: url(for: "/v0/item/\(id).json"))
-        guard let decoded = try? decoder.decode(Item.self, from: data) else {
-            throw ClientError.decodeError
+        if let cached = itemCache[id] {
+            switch cached {
+            case .ready(let item):
+                return item
+            case .inProgress(let task):
+                return try await task.value
+            }
         }
-        return decoded
+
+        let task = Task<Item, Error> {
+            let data = try await request(from: url(for: "/v0/item/\(id).json"))
+            guard let decoded = try? decoder.decode(Item.self, from: data) else {
+                throw ClientError.decodeError
+            }
+            return decoded
+        }
+
+        itemCache[id] = .inProgress(task)
+        do {
+            let item = try await task.value
+            itemCache[id] = .ready(item)
+            return item
+        } catch {
+            itemCache[id] = nil
+            throw error
+        }
     }
     
     func stories(from endpoint: Endpoint) async throws -> [Int] {

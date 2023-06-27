@@ -13,7 +13,7 @@ protocol StoryProviderImplementation {
 }
 
 class DefaultStoryProviderImplementation: StoryProviderImplementation {
-    private let newsClient = NewsClient()
+    private let newsClient: NewsClient = .shared
     private var id: Int
     
     required init(id: Int) {

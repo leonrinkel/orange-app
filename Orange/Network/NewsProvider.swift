@@ -14,8 +14,8 @@ protocol NewsProviderImplementation {
 }
 
 class DefaultNewsProviderImplementation: NewsProviderImplementation {
-    private let newsClient = NewsClient()
-    
+    private let newsClient: NewsClient = .shared
+
     private func fetch(from endpoint: NewsClient.Endpoint) async throws -> [Item] {
         let ids = try await newsClient.stories(from: endpoint)
         return try await withThrowingTaskGroup(of: Item.self) { group in
@@ -45,9 +45,7 @@ class DefaultNewsProviderImplementation: NewsProviderImplementation {
     }
 }
 
-class MockNewsProviderImplementation: NewsProviderImplementation {
-    private let newsClient = NewsClient()
-    
+class MockNewsProviderImplementation: NewsProviderImplementation {    
     func fetchTopStories() async throws -> [Item] {
         return Item.sampleStories
     }
