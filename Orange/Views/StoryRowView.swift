@@ -71,25 +71,7 @@ struct StoryRowView: View {
                     WithoutLink(time: time, title: title)
                 }
             } else {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("...")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                    Text("...")
-                        .font(.headline)
-                        .foregroundColor(.secondary)
-                    HStack(alignment: .firstTextBaseline, spacing: 0) {
-                        Text("...")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                            .lineLimit(1)
-                        Text("...")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                            .lineLimit(1)
-                            .truncationMode(.tail)
-                    }
-                }
+                SkeletonStoryRowView()
             }
         }
         .swipeActions {
@@ -190,5 +172,6 @@ struct StoryRow_Previews: PreviewProvider {
         let provider = StoryProvider(for: id, implementation: MockStoryProviderImplementation())
         StoryRowView(storyProvider: provider)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .frame(height: 100)
     }
 }

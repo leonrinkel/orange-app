@@ -6,6 +6,12 @@
 //
 
 import SwiftUI
+import SkeletonUI
+
+// TODO: put this in model
+struct ItemId: Identifiable {
+    let id: Int
+}
 
 struct StoriesView: View {
     @EnvironmentObject var networkFactory: NetworkFactory
@@ -13,17 +19,18 @@ struct StoriesView: View {
 
     var body: some View {
         VStack() {
-            if storiesProvider.stories.isEmpty {
-                ProgressView()
-                    .progressViewStyle(.circular)
-                Spacer()
-            } else {
-                List(storiesProvider.stories, id: \.self) { storyId in
-                    StoryRowView(storyProvider: networkFactory.newStoryProvider(for: storyId))
+            // TODO: put this id mapping in model
+            SkeletonList(with: storiesProvider.stories.map { ItemId(id: $0)}, quantity: 5) { loading, story in
+                VStack {
+                    if let storyId = story?.id {
+                        StoryRowView(storyProvider: networkFactory.newStoryProvider(for: storyId))
+                    } else {
+                        SkeletonStoryRowView()
+                    }
                 }
-                .refreshable {
-                    try? await storiesProvider.fetchStories()
-                }
+            }
+            .refreshable {
+                try? await storiesProvider.fetchStories()
             }
         }
         .task {

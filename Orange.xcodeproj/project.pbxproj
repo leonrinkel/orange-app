@@ -31,6 +31,8 @@
 		428D77AE2A4DBF1700FF6521 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 428D77AD2A4DBF1700FF6521 /* Alamofire */; };
 		428D77B02A4DC65200FF6521 /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428D77AF2A4DC65200FF6521 /* NewsApi.swift */; };
 		428D77B42A4DD06F00FF6521 /* NewsApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428D77B32A4DD06F00FF6521 /* NewsApiTests.swift */; };
+		428D77B72A4DEAF400FF6521 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 428D77B62A4DEAF400FF6521 /* SkeletonUI */; };
+		428D77B92A4DEF6D00FF6521 /* SkeletonStoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428D77B82A4DEF6D00FF6521 /* SkeletonStoryRowView.swift */; };
 		42A668C62A4B689C00F5CD60 /* CacheEntryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A668C52A4B689C00F5CD60 /* CacheEntryObject.swift */; };
 		42A668C82A4B690F00F5CD60 /* NSCache+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A668C72A4B690F00F5CD60 /* NSCache+Subscript.swift */; };
 		42C927E02A438EB5000D0422 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C927DF2A438EB5000D0422 /* SafariView.swift */; };
@@ -80,6 +82,7 @@
 		427572D62A3F611700CB0211 /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
 		428D77AF2A4DC65200FF6521 /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
 		428D77B32A4DD06F00FF6521 /* NewsApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiTests.swift; sourceTree = "<group>"; };
+		428D77B82A4DEF6D00FF6521 /* SkeletonStoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonStoryRowView.swift; sourceTree = "<group>"; };
 		42A668C52A4B689C00F5CD60 /* CacheEntryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheEntryObject.swift; sourceTree = "<group>"; };
 		42A668C72A4B690F00F5CD60 /* NSCache+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCache+Subscript.swift"; sourceTree = "<group>"; };
 		42C927DF2A438EB5000D0422 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				428D77AE2A4DBF1700FF6521 /* Alamofire in Frameworks */,
+				428D77B72A4DEAF400FF6521 /* SkeletonUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +197,7 @@
 				42C927DF2A438EB5000D0422 /* SafariView.swift */,
 				4269F4312A45C3B800EB79D3 /* SavedStoriesView.swift */,
 				4269F4352A45C60D00EB79D3 /* SavedStoryRowView.swift */,
+				428D77B82A4DEF6D00FF6521 /* SkeletonStoryRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			name = Orange;
 			packageProductDependencies = (
 				428D77AD2A4DBF1700FF6521 /* Alamofire */,
+				428D77B62A4DEAF400FF6521 /* SkeletonUI */,
 			);
 			productName = Orange;
 			productReference = 427572992A3F175700CB0211 /* Orange.app */;
@@ -303,6 +309,7 @@
 			mainGroup = 427572902A3F175700CB0211;
 			packageReferences = (
 				428D77AC2A4DBF1700FF6521 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				428D77B52A4DEAF400FF6521 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
 			);
 			productRefGroup = 4275729A2A3F175700CB0211 /* Products */;
 			projectDirPath = "";
@@ -354,6 +361,7 @@
 				4269F4302A45C33E00EB79D3 /* Persistence.swift in Sources */,
 				424D05212A40E1DF000F581B /* NetworkFactory.swift in Sources */,
 				42C927E02A438EB5000D0422 /* SafariView.swift in Sources */,
+				428D77B92A4DEF6D00FF6521 /* SkeletonStoryRowView.swift in Sources */,
 				424D05252A40E458000F581B /* StoriesProvider.swift in Sources */,
 				4275729F2A3F175700CB0211 /* ContentView.swift in Sources */,
 				428D77B02A4DC65200FF6521 /* NewsApi.swift in Sources */,
@@ -701,6 +709,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		428D77B52A4DEAF400FF6521 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CSolanaM/SkeletonUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -708,6 +724,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 428D77AC2A4DBF1700FF6521 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		428D77B62A4DEAF400FF6521 /* SkeletonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 428D77B52A4DEAF400FF6521 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
+			productName = SkeletonUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 
