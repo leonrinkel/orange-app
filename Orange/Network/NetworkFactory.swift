@@ -8,27 +8,27 @@
 import Foundation
 
 protocol NetworkFactoryImplementation {
-    func newStoriesProvider(for endpoint: NewsClient.Endpoint) -> StoriesProvider
+    func newStoriesProvider(for list: NewsApi.List) -> StoriesProvider
     func newStoryProvider(for id: Int) -> StoryProvider
 }
 
 class DefaultNetworkFactoryImplementation: NetworkFactoryImplementation {
-    @MainActor func newStoriesProvider(for endpoint: NewsClient.Endpoint) -> StoriesProvider {
-        return StoriesProvider(implementation: DefaultStoriesProviderImplementation(endpoint: endpoint))
+    @MainActor func newStoriesProvider(for list: NewsApi.List) -> StoriesProvider {
+        return StoriesProvider(for: list, implementation: DefaultStoriesProviderImplementation())
     }
     
     @MainActor func newStoryProvider(for id: Int) -> StoryProvider {
-        return StoryProvider(implementation: DefaultStoryProviderImplementation(id: id))
+        return StoryProvider(for: id, implementation: DefaultStoryProviderImplementation())
     }
 }
 
 class MockNetworkFactoryImplementation: NetworkFactoryImplementation {
-    @MainActor func newStoriesProvider(for endpoint: NewsClient.Endpoint) -> StoriesProvider {
-        return StoriesProvider(implementation: MockStoriesProviderImplementation(endpoint: endpoint))
+    @MainActor func newStoriesProvider(for list: NewsApi.List) -> StoriesProvider {
+        return StoriesProvider(for: list, implementation: MockStoriesProviderImplementation())
     }
     
     @MainActor func newStoryProvider(for id: Int) -> StoryProvider {
-        return StoryProvider(implementation: MockStoryProviderImplementation(id: id))
+        return StoryProvider(for: id, implementation: MockStoryProviderImplementation())
     }
 }
 
@@ -39,8 +39,8 @@ class NetworkFactory: ObservableObject {
         self.implementation = implementation
     }
     
-    func newStoriesProvider(for endpoint: NewsClient.Endpoint) -> StoriesProvider {
-        return implementation.newStoriesProvider(for: endpoint)
+    func newStoriesProvider(for list: NewsApi.List) -> StoriesProvider {
+        return implementation.newStoriesProvider(for: list)
     }
     
     func newStoryProvider(for id: Int) -> StoryProvider {

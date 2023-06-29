@@ -10,16 +10,6 @@ import XCTest
 @testable import Orange
 
 final class UserDecodeTests: XCTestCase {
-    private lazy var decoder: JSONDecoder = {
-        let myDecoder = JSONDecoder()
-        myDecoder.dateDecodingStrategy = .secondsSince1970
-        return myDecoder
-    }()
-
-    override func setUpWithError() throws {}
-
-    override func tearDownWithError() throws {}
-
     func testUserDecode() throws {
         let json = """
             {
@@ -32,7 +22,7 @@ final class UserDecodeTests: XCTestCase {
             }
         """
         let data = json.data(using: .utf8)!
-        let decoded = try decoder.decode(User.self, from: data)
+        let decoded = try NewsApi.decoder.decode(User.self, from: data)
         XCTAssertEqual(decoded.id, "jl")
         XCTAssertEqual(decoded.created, Date(timeIntervalSince1970: 1173923446))
         XCTAssertEqual(decoded.karma, 2937)

@@ -6,44 +6,42 @@
 //
 
 import Foundation
+import Alamofire
+
+// TODO: consistent naming story/item/list
 
 protocol StoriesProviderImplementation {
-    init(endpoint: NewsClient.Endpoint)
-    func fetchStories() async throws -> [Int]
+    func fetch(list: NewsApi.List) async throws -> [Int]
 }
 
 class DefaultStoriesProviderImplementation: StoriesProviderImplementation {
-    private let newsClient: NewsClient = .shared
-    private var endpoint: NewsClient.Endpoint
-    
-    required init(endpoint: NewsClient.Endpoint) {
-        self.endpoint = endpoint
-    }
-    
-    func fetchStories() async throws -> [Int] {
-        return try await newsClient.stories(from: endpoint)
+    func fetch(list: NewsApi.List) async throws -> [Int] {
+        return try await AF
+            .request(NewsApi.url(for: list.rawValue))
+            .validate()
+            .serializingDecodable([Int].self).value
     }
 }
 
 class MockStoriesProviderImplementation: StoriesProviderImplementation {
-    required init(endpoint: NewsClient.Endpoint) {}
-
-    func fetchStories() async throws -> [Int] {
+    func fetch(list: NewsApi.List) async throws -> [Int] {
         return Item.sampleStories.map { $0.id }
     }
 }
 
 @MainActor
 class StoriesProvider: ObservableObject {
+    private let list: NewsApi.List
     private let implementation: any StoriesProviderImplementation
     
     @Published var stories: [Int] = []
 
-    init(implementation: any StoriesProviderImplementation) {
+    init(for list: NewsApi.List, implementation: any StoriesProviderImplementation = DefaultStoriesProviderImplementation()) {
+        self.list = list
         self.implementation = implementation
     }
     
     func fetchStories() async throws {
-        stories = try await implementation.fetchStories()
+        try await stories = implementation.fetch(list: list)
     }
 }

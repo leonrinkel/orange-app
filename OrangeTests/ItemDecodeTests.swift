@@ -10,16 +10,6 @@ import XCTest
 @testable import Orange
 
 final class ItemDecodeTests: XCTestCase {
-    private lazy var decoder: JSONDecoder = {
-        let myDecoder = JSONDecoder()
-        myDecoder.dateDecodingStrategy = .secondsSince1970
-        return myDecoder
-    }()
-    
-    override func setUpWithError() throws {}
-
-    override func tearDownWithError() throws {}
-
     func testStoryDecode() throws {
         let json = """
             {
@@ -35,7 +25,7 @@ final class ItemDecodeTests: XCTestCase {
             }
         """
         let data = json.data(using: .utf8)!
-        let decoded = try decoder.decode(Item.self, from: data)
+        let decoded = try NewsApi.decoder.decode(Item.self, from: data)
         XCTAssertEqual(decoded.id, 8863)
         XCTAssertEqual(decoded.deleted, nil)
         XCTAssertEqual(decoded.type, .story)
@@ -67,7 +57,7 @@ final class ItemDecodeTests: XCTestCase {
             }
         """
         let data = json.data(using: .utf8)!
-        let decoded = try decoder.decode(Item.self, from: data)
+        let decoded = try NewsApi.decoder.decode(Item.self, from: data)
         XCTAssertEqual(decoded.id, 2921983)
         XCTAssertEqual(decoded.deleted, nil)
         XCTAssertEqual(decoded.type, .comment)
@@ -101,7 +91,7 @@ final class ItemDecodeTests: XCTestCase {
             }
         """
         let data = json.data(using: .utf8)!
-        let decoded = try decoder.decode(Item.self, from: data)
+        let decoded = try NewsApi.decoder.decode(Item.self, from: data)
         XCTAssertEqual(decoded.id, 121003)
         XCTAssertEqual(decoded.deleted, nil)
         XCTAssertEqual(decoded.type, .story)
@@ -134,7 +124,7 @@ final class ItemDecodeTests: XCTestCase {
             }
         """
         let data = json.data(using: .utf8)!
-        let decoded = try decoder.decode(Item.self, from: data)
+        let decoded = try NewsApi.decoder.decode(Item.self, from: data)
         XCTAssertEqual(decoded.id, 192327)
         XCTAssertEqual(decoded.deleted, nil)
         XCTAssertEqual(decoded.type, .job)
@@ -169,7 +159,7 @@ final class ItemDecodeTests: XCTestCase {
             }
         """
         let data = json.data(using: .utf8)!
-        let decoded = try decoder.decode(Item.self, from: data)
+        let decoded = try NewsApi.decoder.decode(Item.self, from: data)
         XCTAssertEqual(decoded.id, 126809)
         XCTAssertEqual(decoded.deleted, nil)
         XCTAssertEqual(decoded.type, .poll)
@@ -201,7 +191,7 @@ final class ItemDecodeTests: XCTestCase {
             }
         """
         let data = json.data(using: .utf8)!
-        let decoded = try decoder.decode(Item.self, from: data)
+        let decoded = try NewsApi.decoder.decode(Item.self, from: data)
         XCTAssertEqual(decoded.id, 160705)
         XCTAssertEqual(decoded.deleted, nil)
         XCTAssertEqual(decoded.type, .pollopt)

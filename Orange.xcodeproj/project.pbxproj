@@ -27,10 +27,10 @@
 		427572CA2A3F179000CB0211 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572C92A3F179000CB0211 /* User.swift */; };
 		427572CC2A3F17B900CB0211 /* ItemDecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572CB2A3F17B900CB0211 /* ItemDecodeTests.swift */; };
 		427572CE2A3F56F000CB0211 /* UserDecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572CD2A3F56F000CB0211 /* UserDecodeTests.swift */; };
-		427572D02A3F580200CB0211 /* NewsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572CF2A3F580200CB0211 /* NewsClient.swift */; };
-		427572D22A3F590100CB0211 /* NewsClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572D12A3F590100CB0211 /* NewsClientTests.swift */; };
-		427572D42A3F5D9D00CB0211 /* NewsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572D32A3F5D9D00CB0211 /* NewsProvider.swift */; };
 		427572D72A3F611700CB0211 /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427572D62A3F611700CB0211 /* StoriesView.swift */; };
+		428D77AE2A4DBF1700FF6521 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 428D77AD2A4DBF1700FF6521 /* Alamofire */; };
+		428D77B02A4DC65200FF6521 /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428D77AF2A4DC65200FF6521 /* NewsApi.swift */; };
+		428D77B42A4DD06F00FF6521 /* NewsApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428D77B32A4DD06F00FF6521 /* NewsApiTests.swift */; };
 		42A668C62A4B689C00F5CD60 /* CacheEntryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A668C52A4B689C00F5CD60 /* CacheEntryObject.swift */; };
 		42A668C82A4B690F00F5CD60 /* NSCache+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A668C72A4B690F00F5CD60 /* NSCache+Subscript.swift */; };
 		42C927E02A438EB5000D0422 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C927DF2A438EB5000D0422 /* SafariView.swift */; };
@@ -77,10 +77,9 @@
 		427572C92A3F179000CB0211 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		427572CB2A3F17B900CB0211 /* ItemDecodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDecodeTests.swift; sourceTree = "<group>"; };
 		427572CD2A3F56F000CB0211 /* UserDecodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDecodeTests.swift; sourceTree = "<group>"; };
-		427572CF2A3F580200CB0211 /* NewsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsClient.swift; sourceTree = "<group>"; };
-		427572D12A3F590100CB0211 /* NewsClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsClientTests.swift; sourceTree = "<group>"; };
-		427572D32A3F5D9D00CB0211 /* NewsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsProvider.swift; sourceTree = "<group>"; };
 		427572D62A3F611700CB0211 /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
+		428D77AF2A4DC65200FF6521 /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
+		428D77B32A4DD06F00FF6521 /* NewsApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiTests.swift; sourceTree = "<group>"; };
 		42A668C52A4B689C00F5CD60 /* CacheEntryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheEntryObject.swift; sourceTree = "<group>"; };
 		42A668C72A4B690F00F5CD60 /* NSCache+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCache+Subscript.swift"; sourceTree = "<group>"; };
 		42C927DF2A438EB5000D0422 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -91,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				428D77AE2A4DBF1700FF6521 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +161,7 @@
 				427572AD2A3F175700CB0211 /* OrangeTests.swift */,
 				427572CB2A3F17B900CB0211 /* ItemDecodeTests.swift */,
 				427572CD2A3F56F000CB0211 /* UserDecodeTests.swift */,
-				427572D12A3F590100CB0211 /* NewsClientTests.swift */,
+				428D77B32A4DD06F00FF6521 /* NewsApiTests.swift */,
 			);
 			path = OrangeTests;
 			sourceTree = "<group>";
@@ -200,13 +200,12 @@
 		427572D82A3F619300CB0211 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				427572D32A3F5D9D00CB0211 /* NewsProvider.swift */,
-				427572CF2A3F580200CB0211 /* NewsClient.swift */,
 				424D051E2A40E0FA000F581B /* StoryProvider.swift */,
 				424D05202A40E1DF000F581B /* NetworkFactory.swift */,
 				424D05242A40E458000F581B /* StoriesProvider.swift */,
 				42A668C52A4B689C00F5CD60 /* CacheEntryObject.swift */,
 				42A668C72A4B690F00F5CD60 /* NSCache+Subscript.swift */,
+				428D77AF2A4DC65200FF6521 /* NewsApi.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -227,6 +226,9 @@
 			dependencies = (
 			);
 			name = Orange;
+			packageProductDependencies = (
+				428D77AD2A4DBF1700FF6521 /* Alamofire */,
+			);
 			productName = Orange;
 			productReference = 427572992A3F175700CB0211 /* Orange.app */;
 			productType = "com.apple.product-type.application";
@@ -299,6 +301,9 @@
 				Base,
 			);
 			mainGroup = 427572902A3F175700CB0211;
+			packageReferences = (
+				428D77AC2A4DBF1700FF6521 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 4275729A2A3F175700CB0211 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -343,7 +348,6 @@
 			files = (
 				427572CA2A3F179000CB0211 /* User.swift in Sources */,
 				4269F4362A45C60D00EB79D3 /* SavedStoryRowView.swift in Sources */,
-				427572D42A3F5D9D00CB0211 /* NewsProvider.swift in Sources */,
 				424D051F2A40E0FA000F581B /* StoryProvider.swift in Sources */,
 				42A668C82A4B690F00F5CD60 /* NSCache+Subscript.swift in Sources */,
 				4269F4322A45C3B800EB79D3 /* SavedStoriesView.swift in Sources */,
@@ -352,8 +356,8 @@
 				42C927E02A438EB5000D0422 /* SafariView.swift in Sources */,
 				424D05252A40E458000F581B /* StoriesProvider.swift in Sources */,
 				4275729F2A3F175700CB0211 /* ContentView.swift in Sources */,
+				428D77B02A4DC65200FF6521 /* NewsApi.swift in Sources */,
 				427572D72A3F611700CB0211 /* StoriesView.swift in Sources */,
-				427572D02A3F580200CB0211 /* NewsClient.swift in Sources */,
 				427572C82A3F178100CB0211 /* Item.swift in Sources */,
 				424D05232A40E266000F581B /* StoryRowView.swift in Sources */,
 				4269F40F2A45C25400EB79D3 /* Model.xcdatamodeld in Sources */,
@@ -370,7 +374,7 @@
 				427572CC2A3F17B900CB0211 /* ItemDecodeTests.swift in Sources */,
 				427572AE2A3F175700CB0211 /* OrangeTests.swift in Sources */,
 				427572CE2A3F56F000CB0211 /* UserDecodeTests.swift in Sources */,
-				427572D22A3F590100CB0211 /* NewsClientTests.swift in Sources */,
+				428D77B42A4DD06F00FF6521 /* NewsApiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +691,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		428D77AC2A4DBF1700FF6521 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		428D77AD2A4DBF1700FF6521 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 428D77AC2A4DBF1700FF6521 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4269F40D2A45C25400EB79D3 /* Model.xcdatamodeld */ = {

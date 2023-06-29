@@ -128,10 +128,8 @@ struct StoryRowView: View {
                 .tint(.accentColor)
             }
         }
-        .onAppear {
-            Task {
-                try? await storyProvider.fetchStory()
-            }
+        .task {
+            try? await storyProvider.fetchStory()
         }
         .onChange(of: storyProvider.story) { story in
             if let story = story {
@@ -188,7 +186,9 @@ struct StoryRowView: View {
 
 struct StoryRow_Previews: PreviewProvider {
     static var previews: some View {
-        StoryRowView(storyProvider: StoryProvider(implementation: MockStoryProviderImplementation(id: Item.sampleStories[0].id)))
+        let id = Item.sampleStories[0].id
+        let provider = StoryProvider(for: id, implementation: MockStoryProviderImplementation())
+        StoryRowView(storyProvider: provider)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
