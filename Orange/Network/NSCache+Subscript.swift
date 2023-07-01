@@ -8,7 +8,7 @@
 import Foundation
 
 extension NSCache where KeyType == NSString, ObjectType == CacheEntryObject {
-    subscript(_ id: Int) -> CacheEntry? {
+    subscript(_ id: ItemId) -> CacheEntry? {
         get {
             let key = "Item_\(id)" as NSString
             let value = object(forKey: key)

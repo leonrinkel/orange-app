@@ -7,8 +7,14 @@
 
 import Foundation
 
+typealias ItemId = Int
+
+extension ItemId: Identifiable {
+    public var id: Int { self }
+}
+
 struct Item: Identifiable, Decodable, Equatable {
-    var id: Int
+    var id: ItemId
     var deleted: Bool?
     var type: ItemType?
     var by: String?

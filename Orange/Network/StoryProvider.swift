@@ -11,11 +11,11 @@ import Foundation
 import Alamofire
 
 protocol StoryProviderImplementation {
-    func fetch(with id: Int) async throws -> Item
+    func fetch(with id: ItemId) async throws -> Item
 }
 
 class DefaultStoryProviderImplementation: StoryProviderImplementation {
-    func fetch(with id: Int) async throws -> Item {
+    func fetch(with id: ItemId) async throws -> Item {
         return try await AF
             .request(NewsApi.url(for: "/v0/item/\(id).json"))
             .validate()
@@ -24,19 +24,19 @@ class DefaultStoryProviderImplementation: StoryProviderImplementation {
 }
 
 class MockStoryProviderImplementation: StoryProviderImplementation {
-    func fetch(with id: Int) async throws -> Item {
+    func fetch(with id: ItemId) async throws -> Item {
         return Item.sampleStories.first(where: { $0.id == id })!
     }
 }
 
 @MainActor
 class StoryProvider: ObservableObject {
-    private let id: Int
+    private let id: ItemId
     private let implementation: any StoryProviderImplementation
     
     @Published var story: Item?
     
-    init(for id: Int, implementation: any StoryProviderImplementation = DefaultStoryProviderImplementation()) {
+    init(for id: ItemId, implementation: any StoryProviderImplementation = DefaultStoryProviderImplementation()) {
         self.id = id
         self.implementation = implementation
     }

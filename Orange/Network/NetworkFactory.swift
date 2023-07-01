@@ -9,7 +9,7 @@ import Foundation
 
 protocol NetworkFactoryImplementation {
     func newStoriesProvider(for list: NewsApi.List) -> StoriesProvider
-    func newStoryProvider(for id: Int) -> StoryProvider
+    func newStoryProvider(for id: ItemId) -> StoryProvider
 }
 
 class DefaultNetworkFactoryImplementation: NetworkFactoryImplementation {
@@ -17,7 +17,7 @@ class DefaultNetworkFactoryImplementation: NetworkFactoryImplementation {
         return StoriesProvider(for: list, implementation: DefaultStoriesProviderImplementation())
     }
     
-    @MainActor func newStoryProvider(for id: Int) -> StoryProvider {
+    @MainActor func newStoryProvider(for id: ItemId) -> StoryProvider {
         return StoryProvider(for: id, implementation: DefaultStoryProviderImplementation())
     }
 }
@@ -27,7 +27,7 @@ class MockNetworkFactoryImplementation: NetworkFactoryImplementation {
         return StoriesProvider(for: list, implementation: MockStoriesProviderImplementation())
     }
     
-    @MainActor func newStoryProvider(for id: Int) -> StoryProvider {
+    @MainActor func newStoryProvider(for id: ItemId) -> StoryProvider {
         return StoryProvider(for: id, implementation: MockStoryProviderImplementation())
     }
 }
@@ -43,7 +43,7 @@ class NetworkFactory: ObservableObject {
         return implementation.newStoriesProvider(for: list)
     }
     
-    func newStoryProvider(for id: Int) -> StoryProvider {
+    func newStoryProvider(for id: ItemId) -> StoryProvider {
         return implementation.newStoryProvider(for: id)
     }
 }
